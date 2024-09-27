@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Mascota</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Detalles de la Mascota</h2>
+    <form>
+        <div class="mb-3">
+            <label for="nombre_mascota" class="form-label">Nombre de la Mascota</label>
+            <input type="text" class="form-control" id="nombre_mascota" th:value="${mascota.nombre_mascota}" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="genero" class="form-label">Género</label>
+            <input type="text" class="form-control" id="genero" th:value="${mascota.genero}" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="edad" class="form-label">Edad</label>
+            <input type="text" class="form-control" id="edad" th:value="${mascota.edad}" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="fechaNacimiento" value="fecha_nacimiento" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="vacunado" class="form-label">¿Vacunado?</label>
+            <input type="text" class="form-control" id="vacunado" value="vacunado" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="desparasitado" class="form-label">¿Desparacitado?</label>
+            <input type="text" class="form-control" id="desparasitado" value="desparasitado" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="dueno" class="form-label">Dueño</label>
+            <input type="text" class="form-control" id="dueno" value="persona" disabled>
+        </div>
+        <a th:href="@{/listaMascotas}" class="btn btn-secondary">Regresar</a>
+    </form>
+</div>
+</body>
+</html>

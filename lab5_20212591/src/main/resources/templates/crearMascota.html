@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Mascota</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2 class="my-4">Nuevo Lugar</h2>
+    <form th:action="@{/listaMascotas/crear}" method="post" >
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="dueño">Dueño:</label>
+                <select id="dueño" class="form-control" name="persona" required>
+                    <option value="">--Seleccione un dueño--</option>
+                    <option th:each="persona: ${listaPersonas}"
+                            th:value="${persona.id}"
+                            th:text="${persona.nombre}"></option>
+                </select>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="nombre">Nombre Mascota</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre_mascota" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="genero">Genero</label>
+                <input type="text" class="form-control" id="genero" placeholder="Genero" name="genero" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="edad">Edad</label>
+                <input type="email" class="form-control" id="edad" placeholder="edad" name="edad" required>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="fecha">fecha Nacimiento</label>
+                <input type="date" class="form-control" id="fecha" placeholder="fecha Nacimiento" name="fecha_nacimiento" required>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="vacunado">Vacunado</label>
+                <input type="text" class="form-control" id="vacunado" placeholder="vacunado" name="vacunado" required>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="desparasitado">Desparasitado</label>
+                <input type="text" class="form-control" id="desparasitado" placeholder="Desparasitado" name="desparasitado" required>
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Crear</button>
+        <a th:href="@{/listaLugares}" class="btn btn-danger">Cancelar</a>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

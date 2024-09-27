@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Viaje</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container">
+    <h2 class="my-4">Nuevo Lugar</h2>
+    <form th:action="@{/listaViajes/registrar}" method="post" >
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="recojo">Punto de Recojo</label>
+                <input type="text" class="form-control" id="recojo" placeholder="Punto de Recojo" name="punto_recojo" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="personas">Cantidad de personas</label>
+                <input type="text" class="form-control" id="personas" placeholder="Cantidad de personas" name="cant_personas" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="perros">Cantidad de perros</label>
+                <input type="text" class="form-control" id="perros" placeholder="Cantidad de perros" name="cant_perros" required>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="titular">Titular del Viaje</label>
+                <select id="titular" class="form-control" name="persona" required>
+                    <option value="">--Seleccione un titular--</option>
+                    <option th:each="persona: ${listaPersonas}"
+                            th:value="${persona.id}"
+                            th:text="${persona.nombre}"></option>
+                </select>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="destino">Destino del viaje</label>
+                    <select id="destino" class="form-control" name="lugares" required>
+                        <option value="">--Seleccione un destino--</option>
+                        <option th:each="lugar: ${listaLugares}"
+                                th:value="${lugar.id}"
+                                th:text="${lugar.nombre_lugar}"></option>
+                    </select>
+                </div>
+
+        <button type="submit" class="btn btn-primary">Crear</button>
+        <a th:href="@{/listaLugares}" class="btn btn-danger">Cancelar</a>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

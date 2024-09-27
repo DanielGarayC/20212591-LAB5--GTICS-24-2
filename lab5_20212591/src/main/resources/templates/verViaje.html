@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Viaje</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Detalles del Viaje</h2>
+    <form>
+        <div class="mb-3">
+            <label for="nombre_mascota" class="form-label">Punto de recojo</label>
+            <input type="text" class="form-control" id="nombre_mascota" value="punto_recojo" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="genero" class="form-label">Cantidad de personas</label>
+            <input type="text" class="form-control" id="genero" value="cant_personas" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="edad" class="form-label">Cantidad de perros</label>
+            <input type="text" class="form-control" id="edad" value="cant_perros" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="fechaNacimiento" th:value="$" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="vacunado" class="form-label">Titular</label>
+            <input type="text" class="form-control" id="vacunado" value="vacunado" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="desparasitado" class="form-label">Destino</label>
+            <input type="text" class="form-control" id="desparasitado" value="desparasitado" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="dueno" class="form-label">Dueño</label>
+            <input type="text" class="form-control" id="dueno" value="persona" disabled>
+        </div>
+        <a th:href="@{/listaMascotas}" class="btn btn-secondary">Regresar</a>
+    </form>
+</div>
+</body>
+</html>
